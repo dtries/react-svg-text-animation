@@ -1,0 +1,190 @@
+/* Fonts Used
+font-family: 'Waiting for the Sunrise', ;
+font-family: 'Gamja Flower', ;
+
+*/
+
+
+:root {
+  --color-background: #fff;
+  --color-button: #111;
+  --color-text: #ff9933;
+  --font: 'Waiting for the Sunrise';
+}
+
+* {
+  fill: none;
+}
+
+html {
+  background: var(--color-background);
+}
+body {
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.button-wrapper {
+  margin-top: -32%;
+  width: 100%;
+}
+
+.themeButton {
+  color: var(--color-text);
+  background: var(--color-button);
+  position: absolute;
+  width: 130px;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  margin-left: 15%;
+  border-radius: 10px;
+  border-color: var(--color-text);
+  outline: none;
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.replayButton {
+  color: var(--color-text);
+  background: var(--color-button);
+  position: absolute;
+  width: 130px;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  margin-left: calc(((100% - 130px) - 15%));
+  border-radius: 10px;
+  border-color: var(--color-text);
+  outline: none;
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-color: var(--color-text);
+  margin-left: 40.83%;
+  margin-top: 5%;
+  border-radius: 50%;
+  position: absolute;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.bounce {
+  animation: bounceDot 3s ease;
+}
+
+.run-animation 
+ {
+
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-dasharray: 574.8816528320312;
+  stroke-dashoffset: 574.8816528320312;
+  animation: draw-it 1.65s ease-in-out 2.9s forwards;
+}
+@keyframes bounceDot {
+  0%   {visibility: visible; 
+        transform: scale(1,1)      translate(525%, -1000%); }
+  20%  { height: 38px;
+         width: 22px;
+         transform: scale(1.8,.1)   translate(525%, 2055%); }
+  45%  { transform: scale(.85,1.1)  translate(720%, -435%); }
+  55%  { height: 28px;
+         width: 15px;
+         transform: scale(1.2,.95)  translate(-720%, -342%); }
+  60%  { transform: scale(.95,1.05) translate(220%, -153%); }
+  64%  { transform: scale(1.1,.97)  translate(-120%, -54%); }
+  68%  { transform: scale(.98,1.02) translate(80.2%, 55%); }
+  71%  {  height: 12px;
+          width: 9px; 
+          transform: scale(1.02,.99) translate(-60.2%, 56%); }
+  75%  {  height: 11px;
+          width: 8px;
+          transform: scale(1.01,.995) translate(40.2%, 57%); }
+  80%  {  height: 25px;
+          width: 25px;
+          transform: scale(1,1)       translate(-20.2%, 45%); }
+  87%   { height: 12px;
+          width: 12px;
+          transform: scale(1,1)      translate(35.2%, 88%); }
+  90%   { opacity: 0.8;
+          height: 10px;
+          width: 9px;
+          transform: scale(1,1)      translate(31.2%,100%); }
+  92%   { opacity: 0.3;
+          height: 8px;
+              widt: 7px;
+              transform: scale(1,1)      translate(31.2%, 102%); }
+
+  95%   { opacity: 0.1;
+          height: 5px;
+          width: 4px; 
+          transform: scale(1,1)       translate(31.2%, 105%);}
+  98%   {opacity: 0.1;}
+  100% {  opacity: 0.1;
+          height: 3px;
+          width: 2px;
+          transform: scale(1,1)       translate(40.5%, 20.5%);}
+}
+
+@keyframes draw-it {
+  from {
+    stroke-dashoffset: 574.8816528320312;
+  } to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@media screen and (max-width: 1024px){
+  .themeButton{
+    margin-left: 15%;
+  }
+
+  .replayButton{
+    margin-left: calc(((100% - 130px) - 15%));
+  }
+}
+
+@media screen and (max-width: 768px){
+  .themeButton{
+    margin-left: 5%;
+  }
+
+  .replayButton{
+    margin-left: calc(((100% - 130px) - 5%));
+  }
+}
+
+@media screen and (max-width: 512px){
+  .themeButton{
+    margin-left: 5%;
+  }
+
+  .replayButton{
+    margin-left: calc(((100% - 130px) - 5%));
+  }
+}
+
+@media screen and (max-width: 300px){
+  .themeButton{
+    margin-left: calc(50% - (130px / 2));
+  }
+
+  .replayButton{
+    margin-top: 30%;
+    margin-left: calc(50% - (130px / 2));
+  }
+}
